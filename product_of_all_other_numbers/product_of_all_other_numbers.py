@@ -5,7 +5,36 @@ Returns: a List of integers
 def product_of_all_other_numbers(arr):
     # Your code here
 
-    pass
+    length = len(arr)
+    left = []
+    right = []
+    result = []
+    index = 0
+    multiplied = 1
+
+    while index <= length - 1:
+
+        for i in arr[:index]:
+            left.append(i)
+        for y in arr[index+1:]:
+            right.append(y)
+
+        total = left + right
+
+        for x in total:
+            multiplied = multiplied * x
+
+        result.append(multiplied)
+
+        total.clear()
+        left.clear()
+        right.clear()
+
+        multiplied = 1
+
+        index += 1
+
+    return result
 
 
 if __name__ == '__main__':
