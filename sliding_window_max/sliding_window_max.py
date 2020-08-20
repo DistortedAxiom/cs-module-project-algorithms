@@ -7,10 +7,8 @@ def sliding_window_max(nums, k):
     answer = []
 
     for x in range(len(nums) - k + 1):
-        window = []
-        for i in range(x,x+k):
-            window.append(nums[i])
-        answer.append(max(window))
+        answer.append(max(nums[x:x + k]))
+
     return answer
 
 
